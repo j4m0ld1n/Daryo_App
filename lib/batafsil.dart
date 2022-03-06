@@ -124,7 +124,8 @@ class Batafsil extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       'Share...',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.normal),
                     ),
                   ),
                 ),
