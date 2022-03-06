@@ -43,8 +43,305 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // BuildContext? ctx;
-
+  bool act = true;
   @override
+  Widget myDrawer() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    const Text(
+                      'Daryo',
+                      style: TextStyle(
+                        fontSize: 36,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(
+                        left: 10.0,
+                        right: 0.0,
+                        top: 10.0,
+                        bottom: 10.0,
+                      ),
+                      padding: const EdgeInsets.all(2.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 1.0,
+                          color: Colors.white,
+                        ),
+                        borderRadius: const BorderRadius.horizontal(
+                          left: Radius.circular(20.0),
+                          right: Radius.zero,
+                        ),
+                        color: myColor(act, true),
+                      ),
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            act = true;
+                          });
+                        },
+                        child: Text(
+                          'LOTINCHA',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: myColor(act, false),
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(
+                        left: 0.0,
+                        right: 10.0,
+                        top: 10.0,
+                        bottom: 10.0,
+                      ),
+                      padding: const EdgeInsets.all(2.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 1.0,
+                          color: Colors.white,
+                        ),
+                        borderRadius: const BorderRadius.horizontal(
+                          left: Radius.zero,
+                          right: Radius.circular(20.0),
+                        ),
+                        color: myColor(act, false),
+                      ),
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            act = false;
+                          });
+                        },
+                        child: Text(
+                          'КИРИЛЧА',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: myColor(act, true),
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 4.0,
+                ),
+                Row(
+                  children: const [
+                    Text(
+                      'Toshkent',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    SizedBox(
+                      width: 120.0,
+                    ),
+                    Icon(
+                      Icons.cloud_queue,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Text(
+                      '+12.0\u00B0',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                const Divider(
+                  height: 1.0,
+                  color: Colors.white,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 0.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1.0, color: Colors.white),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30.0)),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 1.0, horizontal: 6.0),
+                        child: const Text(
+                          '\$',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        '10769.78',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1.0, color: Colors.white),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30.0)),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 1.0, horizontal: 6.0),
+                        child: const Text(
+                          '\u20AC',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        '12166.62',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1.0, color: Colors.white),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30.0)),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 1.0, horizontal: 6.0),
+                        child: const Text(
+                          '\u20BD',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      // SizedBox(
+                      //   width: 10.0,
+                      // ),
+                      const Text(
+                        '146.17',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w300),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            margin: EdgeInsets.zero,
+          ),
+          ListTile(
+            title: const Text('Qo`llanam ekranini ko`rsatish'),
+            tileColor: Colors.amberAccent,
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('So`ngi yangiliklar'),
+            selectedColor: Colors.blueGrey.withOpacity(0.5),
+            tileColor: Colors.blueGrey.withOpacity(0.5),
+            onTap: () {
+              // Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Mahalliy'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Dunyo'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Texnologiyalar'),
+            onTap: () {},
+          ),
+          const Divider(
+            height: 1.0,
+            color: Colors.grey,
+          ),
+          ListTile(
+            title: const Text(
+              'Tanlangan xabarlar',
+              style: TextStyle(
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {},
+          ),
+          const Divider(
+            height: 1.0,
+            color: Colors.grey,
+          ),
+          ListTile(
+            title: const Text('Madaniyat'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Avto'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Sport'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Foto'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('LifeStyle'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Kolomunistlar'),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Afisha'),
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget newsCard(NewsDaryo news, BuildContext context) {
     return Card(
       margin: EdgeInsets.zero,
@@ -217,291 +514,41 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget myDrawer() {
-  return Drawer(
-    child: ListView(
-      padding: EdgeInsets.zero,
-      children: [
-        DrawerHeader(
-          decoration: const BoxDecoration(
-            color: Colors.blue,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                children: [
-                  const Text(
-                    'Daryo',
-                    style: TextStyle(
-                      fontSize: 36,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      left: 10.0,
-                      right: 0.0,
-                      top: 10.0,
-                      bottom: 10.0,
-                    ),
-                    padding: const EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 1.0,
-                        color: Colors.white,
-                      ),
-                      borderRadius: const BorderRadius.horizontal(
-                        left: Radius.circular(20.0),
-                        right: Radius.zero,
-                      ),
-                      color: Colors.white,
-                    ),
-                    child: TextButton(
-                      onPressed: () => {},
-                      child: const Text(
-                        'LOTINCHA',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.blue,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      left: 0.0,
-                      right: 10.0,
-                      top: 10.0,
-                      bottom: 10.0,
-                    ),
-                    padding: const EdgeInsets.all(2.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 1.0,
-                        color: Colors.white,
-                      ),
-                      borderRadius: const BorderRadius.horizontal(
-                        left: Radius.zero,
-                        right: Radius.circular(20.0),
-                      ),
-                      color: Colors.blue,
-                    ),
-                    child: TextButton(
-                      onPressed: () => {},
-                      child: const Text(
-                        'КИРИЛЧА',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 4.0,
-              ),
-              Row(
-                children: const [
-                  Text(
-                    'Toshkent',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w300),
-                  ),
-                  SizedBox(
-                    width: 120.0,
-                  ),
-                  Icon(
-                    Icons.cloud_queue,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    '+12.0\u00B0',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w300),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const Divider(
-                height: 1.0,
-                color: Colors.white,
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1.0, color: Colors.white),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30.0)),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 1.0, horizontal: 6.0),
-                      child: const Text(
-                        '\$',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                    const Text(
-                      '10769.78',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1.0, color: Colors.white),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30.0)),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 1.0, horizontal: 6.0),
-                      child: const Text(
-                        '\u20AC',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                    const Text(
-                      '12166.62',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1.0, color: Colors.white),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30.0)),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 1.0, horizontal: 6.0),
-                      child: const Text(
-                        '\u20BD',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                    // SizedBox(
-                    //   width: 10.0,
-                    // ),
-                    const Text(
-                      '146.17',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          margin: EdgeInsets.zero,
-        ),
-        ListTile(
-          title: const Text('Qo`llanam ekranini ko`rsatish'),
-          tileColor: Colors.amberAccent,
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('So`ngi yangiliklar'),
-          selectedColor: Colors.blueGrey.withOpacity(0.5),
-          tileColor: Colors.blueGrey.withOpacity(0.5),
-          onTap: () {
-            // Navigator.pop(context);
-          },
-        ),
-        ListTile(
-          title: const Text('Mahalliy'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Dunyo'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Texnologiyalar'),
-          onTap: () {},
-        ),
-        const Divider(
-          height: 1.0,
-          color: Colors.grey,
-        ),
-        ListTile(
-          title: const Text(
-            'Tanlangan xabarlar',
-            style: TextStyle(
-              color: Colors.blue,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          onTap: () {},
-        ),
-        const Divider(
-          height: 1.0,
-          color: Colors.grey,
-        ),
-        ListTile(
-          title: const Text('Madaniyat'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Avto'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Sport'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Foto'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('LifeStyle'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Kolomunistlar'),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text('Afisha'),
-          onTap: () {},
-        ),
-      ],
-    ),
-  );
+Color myColor(bool a, b) {
+  if (a) {
+    return b ? Colors.white : Colors.blue;
+  }
+  return b ? Colors.blue : Colors.white;
+}
+
+TextStyle myTextStyle(int a, b) {
+  if (a == 1) {
+    if (b == 1) {
+      return const TextStyle(
+        fontSize: 12,
+        color: Colors.blue,
+        fontWeight: FontWeight.w400,
+      );
+    } else {
+      return const TextStyle(
+        fontSize: 12,
+        color: Colors.white,
+        fontWeight: FontWeight.w400,
+      );
+    }
+  } else {
+    if (b == 1) {
+      return const TextStyle(
+        fontSize: 12,
+        color: Colors.white,
+        fontWeight: FontWeight.w400,
+      );
+    } else {
+      return const TextStyle(
+        fontSize: 12,
+        color: Colors.blue,
+        fontWeight: FontWeight.w400,
+      );
+    }
+  }
 }
